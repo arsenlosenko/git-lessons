@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "git-lessons"
+version = "0.1.0"
+description = ""
+authors = ["Arsen Losenko <20901439+arsenlosenko@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.114.2"
+uvicorn = "^0.30.6"
+
+[tool.poetry.scripts]
+server = "main:start"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
