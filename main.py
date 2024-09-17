@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def index():
-    return {"message": "API is working"}
+    return {"message": "info received from index endpoint"}
 
 
 def start():
