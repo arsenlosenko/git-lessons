@@ -1,0 +1,22 @@
+[user]
+    name = Arsen Losenko
+    email = arsenlosenko@example.com
+
+[core]
+    editor = vim
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+
+[merge]
+    tool = vimdiff
+
+[diff]
+    tool = vimdiff
+
+[push]
+    default = simple
+
