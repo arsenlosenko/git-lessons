@@ -17,7 +17,8 @@ async def index():
 
 @app.get("/users")
 async def get_users():
-    return {"users": users}
+    user_info = users
+    return {"users": user_info}
 
 
 def start():
