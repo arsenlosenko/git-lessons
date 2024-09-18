@@ -21,6 +21,12 @@ async def get_users():
     return {"users": user_info}
 
 
+@app.get("/users/{user_id}")
+async def get_user_info(user_id: int):
+    user_detail = [item for item in users if item["id"] == user_id]
+    return {"user_info": user_detail}
+
+
 def start():
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
