@@ -3,10 +3,22 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+users = [
+    {"id": 1, "name": "User One"},
+    {"id": 2, "name": "User Two"},
+    {"id": 3, "name": "User Three"},
+]
+
 
 @app.get("/")
 async def index():
     return {"message": "API is working"}
+
+
+@app.get("/users")
+async def get_users():
+    user_info = users
+    return {"users": user_info}
 
 
 def start():
