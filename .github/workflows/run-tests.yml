@@ -21,11 +21,11 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov fastapi httpx uvicorn
-          pytest app/test_main.py --cov=app --cov-report=html --cov-context=python${{ matrix.python-version }} tests/
+          pytest app/test_main.py --cov=app --cov-report=html
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report-${{ matrix.python-version }}
+          name: coverage-report-${{ github.run_id }}-${{ github.sha }}
           path: htmlcov/
 
