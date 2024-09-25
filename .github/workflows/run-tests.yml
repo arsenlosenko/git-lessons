@@ -1,10 +1,9 @@
 name: Run Tests
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,4 +21,10 @@ jobs:
         run: |
           pip install pytest pytest-cov fastapi httpx uvicorn
           pytest app/test_main.py --cov=app --cov-report=html
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: htmlcov/
 
