@@ -20,6 +20,6 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Test with pytest
         run: |
-          pip install pytest pytest-cov
+          pip install pytest pytest-cov fastapi
           pytest app/test_main.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
