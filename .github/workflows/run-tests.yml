@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
@@ -18,6 +19,13 @@ jobs:
 
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
+
+      - name: Lint with Flake8
+        run: |
+          pip install flake8
+          flake8 app/
+
+
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov fastapi httpx uvicorn
